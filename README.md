@@ -4,7 +4,8 @@ Run the following commands in the terminal to automatically run the program:
 
 ``` 
 chmod +x ./run.sh
-
+```
+```
 ./run.sh
 ```
 
