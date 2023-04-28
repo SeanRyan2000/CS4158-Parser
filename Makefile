@@ -1,9 +1,7 @@
 all: bucol
 
-bucol: parse.l parse.y
-	flex parse.l
-	bison -d parse.y
-	gcc -o parse parse.tab.c lex.yy.c -lfl
+bucol: 
+	flex parse.l&&bison -d parse.y&&gcc lex.yy.c parse.tab.c
 
 clean:
-	rm -f parse lex.yy.c parse.tab.c parse.tab.h
+	rm -f parse lex.yy.c parse.tab.c parse.tab.h a.out

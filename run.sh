@@ -1,12 +1,16 @@
-# Generates lex.yy.c
-flex parse.l
-
-# Generates y.tab.c and y.tab.h
-bison -d parse.y
-
-# Compiles C files
-gcc -c lex.yy.c parse.tab.c
-gcc -o output lex.yy.o parse.tab.o -ll
+flex parse.l && bison -d parse.y && gcc lex.yy.c parse.tab.c 
 
 # Execute output
-./output < test.jibuc
+echo "Running Valid Example"
+./a.out < Valid.example
+echo "Valid Example Completed"
+echo ""
+echo ""
+
+echo "Running Invalid Example"
+./a.out < Invalid.example
+echo "Invalid Example Completed"
+echo ""
+echo ""
+
+# ./output < test.jibuc
